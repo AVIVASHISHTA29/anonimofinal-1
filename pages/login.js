@@ -8,6 +8,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { setUserCookie } from "../utils/userCookie";
 import Cookies from "cookies";
 import { useRouter } from "next/router";
+import  {Link} from "@material-ui/core";
+import firebase from 'firebase';
 
 
 function Login() {
@@ -85,8 +87,16 @@ function Login() {
         .then((result) => {
             console.log(result)
             setUserCookie(result?.user?.email);
-            outer.push("/")
+            router.push("/")
     })
+  }
+
+  const resetPassword = ()=>{
+    const input = prompt('Please enter the email address you want to reset the password of.');
+    if (!input) return null;
+    firebase.auth().sendPasswordResetEmail(input);
+    alert(`We've sent an email to ${input}. Check your email for further instructions`);
+      
   }
     
     return (
@@ -127,8 +137,12 @@ function Login() {
                     
                     
                     <button type="submit" onClick={signInWithEmail} className="button_login"><h3 style={{color:"#212121"}}>Log In</h3></button>
+                    <br/>
+                    <br/>
+                    <Link style={{color:"#FFAE5F",paddingTop:10,textDecoration:"none"}} onClick={resetPassword}>Forgot Password</Link>
                     </center>
                 </form>
+                
           
             <p>or</p>
 
@@ -210,7 +224,7 @@ const LoginContainer = styled.div`
     margin-left:auto;
     margin-top:100px;
     width:400px;
-    height:400px;
+    height:max-content;
     color:#fff;
 
 `;
