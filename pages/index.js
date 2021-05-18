@@ -9,13 +9,10 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import InboxList from '../components/InboxList';
 import Cookies from 'cookies'
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
 
-export default function Home({inboxSnapshot}) {
-  const router = useRouter();
-    
+
+export default function Home({inboxSnapshot}) { 
 
   var [copybuttontext, setCopybuttontext] = useState("Copy")
   const [user] = useAuthState(auth);
