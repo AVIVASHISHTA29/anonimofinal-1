@@ -1,0 +1,235 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif  !important;
+  background-color: #212121;
+  color:#fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.googleLogin{
+  display:flex;
+  align-items:center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  color:#fff;
+}
+
+.googleFontAwesome{
+  font-size:300%;
+  padding:10px;
+  color:#fff;
+}
+
+.SignupForm{
+  display: flex;
+  flex-direction: column;
+  color:#fff;
+  align-items:center;
+
+}
+
+.button_login{
+  background-color: #FFAE5F;
+  border-radius:30px;
+  padding:0px;
+  width: 120px;
+  border:0px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left:auto;
+}
+
+.inputLogin{
+  background-color: #636262;
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  border:none;
+  padding-left:10px;
+  font-size: 16px;
+  color:#fff;
+  margin-bottom: 5px;
+  margin-top: 5px;  
+}
+
+.inputLogin :focus{
+  outline:none;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+.SignupForm ::placeholder{
+  color: #fff;
+  opacity: 1;
+}
+
+.LogoDiv{
+  display: flex;
+  align-items: center;
+}
+
+.messagingInput ::placeholder{
+  color:#fff;
+  opacity: 1;
+}
+
+.link_textarea{
+  background-color: #636262;
+  width: 100%;
+  border-radius: 3px;
+  border:none;
+  padding-left:10px;
+  color:#fff;
+  margin-bottom: 5px;
+  margin-top: 0px;  
+  margin-left: auto;
+  margin-right: auto;
+  resize: none;
+  height: auto;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif  !important;
+  
+}
+
+.buttoncopy{
+  background-color:#FFAE5F;
+  color:#333333;
+  margin-left: auto;
+  margin-right: auto;
+  width:auto;
+  height: 30px;
+  border:1px solid #FFAE5F;
+  border-radius:20px;
+  margin-bottom:15px;
+  margin-top:5px;
+  font-size:14px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button_signup{
+  background-color: #FFAE5F;
+  border-radius:30px;
+  padding:0px;
+  width: 120px;
+  border:0px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left:auto;
+  height:40px;
+}
+
+.modalBox{
+  border:0px solid #636262;
+  padding:25px;
+  border-radius:5px;
+  align-items:center;
+  text-align:center;
+  display:relative;
+}
+
+.button_send{
+  background-color: #FFAE5F;
+  border-radius:30px;
+  padding:0px;
+  width: 100px;
+  border:0px;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right: auto;
+  height:37px;
+  color:#333333;
+  font-size:15px;
+  margin-bottom: 17px;
+}
+
+.Post_Button{
+
+  background-color: #FFAE5F;
+  margin-right:10px;
+  border-radius: 20px;
+  border:1px solid #FFAE5F;
+  font-weight: bolder;
+  width:60px;
+}
+
+.Post_DelButton{
+
+  background-color: #FFAE5F;
+  border-radius: 20px;
+  border:1px solid #FFAE5F;
+
+}
+
+.EnterChat_Button{
+  background-color: #FFAE5F;
+  margin-right:10px;
+  border-radius: 20px;
+  border:1px solid #FFAE5F;
+  font-weight: bolder;
+  width:60px;
+  padding:7px;
+  color:#333333;
+}
+
+.inputPost{
+  background-color: #636262;
+  width: 100%;
+  min-height:400px;
+  height:max-content;
+  border-radius: 5px;
+  border:none;
+  font-size: 16px;
+  color:#fff;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif  !important;
+  padding:10px;
+  resize:none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputPost :focus{
+  outline:none;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+.sendbutton{
+  background-color: #FFAE5F;
+  margin-right:10px;
+  border-radius: 20px;
+  border:1px solid #FFAE5F;
+  font-weight: bolder;
+  width:70px;
+  padding:7px;
+  color:#333333;
+}
+
+.postinboxingContainer{
+margin-top:20px;
+background-color:#333333;
+width:90%;
+padding:20px;
+margin-right:auto;
+margin-left:auto;
+border-radius:7px;
+}
