@@ -5,7 +5,7 @@ import {auth,provider} from "../firebase";
 import Header from "../components/Header";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { setUserCookie } from "../utils/usercookie";
+import { setUserCookie } from "../utils/userCookie";
 import Cookies from "cookies";
 
 
