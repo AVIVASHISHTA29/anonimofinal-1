@@ -8,7 +8,7 @@ import { useRef, useState } from 'react';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import InboxList from '../components/InboxList';
-import Cookies from 'cookies'
+import Cookies from 'cookies';
 
 
 
@@ -113,7 +113,7 @@ const UpperContainer = styled.div`
 export async function getServerSideProps(ctx) {
   const cookie = new Cookies(ctx.req, ctx.res)
   const userEmail = cookie.get('auth');
-  var userInboxRef = [];
+  var userInboxRef = ["hi"];
   if (userEmail){
   await db.collection('inbox').where('receiver','==',userEmail).orderBy("timestamp","desc").get().then((docs)=>{
     docs.forEach((doc)=>{
