@@ -125,7 +125,6 @@ export async function getServerSideProps(ctx) {
   return{
     
       props: {
-          data:"hi",
           inboxSnapshot:JSON.stringify(userInboxRef)
         
       }
