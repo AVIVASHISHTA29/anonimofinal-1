@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { setUserCookie } from "../utils/userCookie";
 import Cookies from "cookies";
+import { useRouter } from "next/router";
 
 
 function Login() {
@@ -46,7 +47,7 @@ function Login() {
     const [ password,setPassword] = useState('');
     const [ email,setEmail] = useState('');
     const [ confirmPassword,setConfirmPassword] = useState('');
-
+      const router = useRouter();
     const signUp = (event)=>{
         event.preventDefault();
 
@@ -61,6 +62,8 @@ function Login() {
           })
         })
         .catch((error)=>alert(error.message));
+
+        router.push("/")
         
       }
       
@@ -70,6 +73,7 @@ function Login() {
         auth.signInWithEmailAndPassword(email,password).then((result)=> {
           setUserCookie(result.user.email)})
         .catch((error)=>alert(error.message))
+        router.push("/")
         
       
     }
@@ -81,7 +85,7 @@ function Login() {
         .then((result) => {
             console.log(result)
             setUserCookie(result?.user?.email);
-        
+            outer.push("/")
     })
   }
     
