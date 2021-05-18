@@ -11,7 +11,6 @@ function InboxList({inboxSnapshot}) {
 
     const inbox = JSON.parse(inboxSnapshot);
     const [user]= useAuthState(auth);
-    const prettyMilliseconds = require('pretty-ms');
     return (
         <center>
             <div style={{border:"0px solid #333333",width:"90%"}}>
