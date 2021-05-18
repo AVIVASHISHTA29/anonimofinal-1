@@ -33,7 +33,7 @@ function MyList() {
                 <ListItem>
                   
                       <ListItemIcon ><AccountCircleIcon style={{color:"#fff"}}/></ListItemIcon>
-                      <ListItemText primary="Home" />
+                      <ListItemText primary="Inbox" />
                 </ListItem>
               </Link>
 
