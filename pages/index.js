@@ -113,7 +113,7 @@ const UpperContainer = styled.div`
 export async function getServerSideProps(ctx) {
   const cookie = new Cookies(ctx.req, ctx.res)
   const userEmail = cookie.get('auth');
-  var userInboxRef = ["hi"];
+  var userInboxRef = [];
   if (userEmail){
   await db.collection('inbox').where('receiver','==',userEmail).orderBy("timestamp","desc").get().then((docs)=>{
     docs.forEach((doc)=>{
@@ -125,6 +125,7 @@ export async function getServerSideProps(ctx) {
   return{
     
       props: {
+          data:"hi",
           inboxSnapshot:JSON.stringify(userInboxRef)
         
       }
