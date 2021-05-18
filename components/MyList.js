@@ -9,7 +9,7 @@ import { auth } from '../firebase';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { removeUserCookie } from '../utils/usercookie';
+import { removeUserCookie } from '../utils/userCookie';
 
 function MyList() {
     const [user] = useAuthState(auth);
