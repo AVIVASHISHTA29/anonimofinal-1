@@ -7,7 +7,7 @@ import firebase from 'firebase';
 import { useEffect } from 'react';
 import "../styles/login.css";
 import getUsername from '../utils/getUsername';
-import { setUserCookie } from '../utils/usercookie';
+import { setUserCookie } from '../utils/userCookie';
 
 function MyApp({ Component, pageProps }) {
 
