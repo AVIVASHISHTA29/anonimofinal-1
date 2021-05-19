@@ -37,24 +37,27 @@ export default function postinboxing() {
             <Header/>
             <div className="postinboxingContainer">
             <h1>
-                Your Message Was Sent!
+                Your Message Was Sent
             </h1>
+            <center>
+            <p style={{color:"#fff",opacity:"0.7",fontSize:15}}>
+                Share your link with friends to receive anonymous texts.
+            </p>
+            <button className="sendbutton" onClick={()=>{router.push('/')}}>Home</button>
+            </center>
 
-            <button className="sendbutton" onClick={()=>{router.push('/')}}>Back</button>
+           
             </div>
 
             <UpperContainer>
-                <Avatar 
-                            src="https://firebasestorage.googleapis.com/v0/b/whatsapp-2-6f89f.appspot.com/o/Anonimo%20Logo%20(2).png?alt=media&token=e4392320-1885-4f13-922e-e0672b876ebd"
-                            style={{height:140 , width:140 , marginRight:"auto" , marginLeft:"auto" , marginBottom:"5px" , marginTop:"10px"}}
-                            />
-                <h4>{userLoggedIn?.email}</h4>
+            
+                <h4>Copy Your Link</h4>
                 <div style={{alignItems:"center" , display:"flex", flexDirection:"column"}}>
                 
                 <form>
                     <textarea className="link_textarea"
                     ref={textAreaRef}
-                    value={`www.anonimo.fun/inbox/${getUsername(user)}`}
+                    value={`www.anonimo.fun/inbox/${getUsername(userLoggedIn)}`}
                     readonly={true}
                     onClick={(event) =>{
                         event.preventDefault()
