@@ -9,8 +9,10 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import Head from 'next/head';
 import firebase from 'firebase';
+import getUsername from '../../utils/getUsername';
 
 function inboxing() {
+
     const router = useRouter()
     const [ post,setPost] = useState('');
     const { username } = router.query;
@@ -19,7 +21,6 @@ function inboxing() {
     const [inboxSnapshot] = useCollection(userInboxRef);
     const [usersSnapshot] = useCollection(db.collection('users').where('username','==',username));
     const useremail = usersSnapshot?.docs?.[0]?.data().email;
-    console.log(useremail)
 
     const createInbox = ()=>{
         const input_message = post;
@@ -38,7 +39,20 @@ function inboxing() {
 
     }
 
-    return (
+
+    const Home=()=>{
+        {router.push("/")}
+    }
+    if (getUsername(user)==username){
+        return (
+            <div>
+                {Home()}
+            </div>
+
+        )
+    }
+        return (
+        
         <div>
             <Head>
             <title>Anonimo</title>

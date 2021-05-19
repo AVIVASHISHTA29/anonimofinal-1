@@ -1,10 +1,26 @@
-import { Avatar, styled } from '@material-ui/core';
+import {Avatar} from '@material-ui/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState , useRef } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import styled from 'styled-components';
 import Header from '../components/Header';
+import  {auth}  from '../firebase';
+import getUsername from '../utils/getUsername';
 
-function postinboxing() {
+
+export default function postinboxing() {
+    var [copybuttontext, setCopybuttontext] = useState("Copy");
     const router = useRouter();
+    const [userLoggedIn] = useAuthState(auth);
+    const textAreaRef = useRef(null);
+  
+  function copyToClipboard(e) {
+    textAreaRef.current.select();
+    document.execCommand('copy');
+    e.target.focus();
+    alert("Link is Copied!");
+  };
 
     return (
         <div>
@@ -26,6 +42,38 @@ function postinboxing() {
 
             <button className="sendbutton" onClick={()=>{router.push('/')}}>Back</button>
             </div>
+
+            <UpperContainer>
+                <Avatar 
+                            src="https://firebasestorage.googleapis.com/v0/b/whatsapp-2-6f89f.appspot.com/o/Anonimo%20Logo%20(2).png?alt=media&token=e4392320-1885-4f13-922e-e0672b876ebd"
+                            style={{height:140 , width:140 , marginRight:"auto" , marginLeft:"auto" , marginBottom:"5px" , marginTop:"10px"}}
+                            />
+                <h4>{userLoggedIn?.email}</h4>
+                <div style={{alignItems:"center" , display:"flex", flexDirection:"column"}}>
+                
+                <form>
+                    <textarea className="link_textarea"
+                    ref={textAreaRef}
+                    value={`www.anonimo.fun/inbox/${getUsername(user)}`}
+                    readonly={true}
+                    onClick={(event) =>{
+                        event.preventDefault()
+                    }
+                    
+                    }
+                    />
+                </form>
+                {
+                /* Logical shortcut for only displaying the 
+                    button if the copy command exists */
+                document.queryCommandSupported('copy') &&
+                <div>
+                <button className="buttoncopy" onClick={copyToClipboard}><strong>{copybuttontext}</strong></button> 
+                </div>
+                }
+
+    </div>
+      </UpperContainer>
             <Avatar 
                 src="https://firebasestorage.googleapis.com/v0/b/whatsapp-2-6f89f.appspot.com/o/Anonimo%20Logo%20(2).png?alt=media&token=e4392320-1885-4f13-922e-e0672b876ebd"
                 style={{height:150 , width:150 , marginRight:"auto" , marginLeft:"auto" , marginBottom:"5px" , marginTop:"10px"}}
@@ -40,6 +88,22 @@ function postinboxing() {
     )
 }
 
-export default postinboxing
 
+
+const UpperContainer = styled.div`
+
+  margin-top:20px;
+  background-color:#333333;
+  width:max-content;
+  padding:20px;
+  margin-right:auto;
+  margin-left:auto;
+  border-radius:7px;
+
+  >h4{
+    text-align:center;
+    padding-bottom:5px;
+  }
+
+`;
 
